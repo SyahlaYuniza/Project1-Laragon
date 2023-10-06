@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//mahasiswa
 Route::get('/mahasiswa', function () {
 
     $array_nama = ["Risa", "Rudi", "Bambang"];
