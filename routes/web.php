@@ -24,6 +24,7 @@ Route::get('/hello', function () {
     return 'Hello world';
 });
 
+// route admin
 Route::get('/admin', function () {
     return view ('dashboard');
 });
