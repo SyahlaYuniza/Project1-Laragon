@@ -1,17 +1,18 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChasierController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
+Route::get('/category', [CategoryController::class, 'index'])->name('category-index'); 
+Route::get('/category/create', [CategoryController::class, 'tambah'])->name('category-create');
+Route::post('/category/store', [CategoryController::class, 'simpan'])->name('category-store');
+
+Route::get('/chasier', [ChasierController::class, 'index'])->name('chasier-index'); 
+Route::get('/chasier/create', [ChasierController::class, 'tambah'])->name('chasier-create');
+Route::post('/chasier/store', [ChasierController::class, 'simpan'])->name('chasier-store');
+
 
 //mahasiswa
 Route::get('/mahasiswa', function () {
@@ -25,6 +26,7 @@ Route::get('/hello', function () {
 });
 
 // route admin
-Route::get('/admin', function () {
+Route::get('/dashboard', function () {
     return view ('dashboard');
-});
+})->name('dashboard');
+
