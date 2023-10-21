@@ -1,13 +1,13 @@
 @extends('layout.be.template')
-@section('title','Data Chasier')
+@section('title','Data Supplier')
 @section('content')
 
 <div  class="container px-4 mt-4">
 <div class="row">
-        <div class="col-md-8">
-            <a href="{{ route('chasier-create') }}" class="btn btn-primary mb-3">
+        <div class="col-md-10">
+            <a href="{{ route('supplier-create') }}" class="btn btn-primary mb-3">
                 <i class="fas fa-plus"></i> Tambah
-             </a>
+        </a>
             <div class="card">
                 <div class="card-header card-body">
 
@@ -16,9 +16,10 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
-                        <th>Phone</th>
-                        <th>Age</th>
+                        <th>Nama PT</th>
+                        <th>Nama Ketua</th>
+                        <th>Nomor Kontak</th>
+                        <th>Alamat</th>
                         <th>Tanggal</th>
                         <th>Aksi</th>
                     </tr>
@@ -27,9 +28,10 @@
                     @foreach($data as $row)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $row->name }}</td>
-                            <td>{{ $row->phone }}</td>
-                            <td>{{ $row->age }}</td>
+                            <td>{{ $row->nama_pt }}</td>
+                            <td>{{ $row->nama_ketua }}</td>
+                            <td>{{ $row->nomor_kontak }}</td>
+                            <td>{{ $row->alamat }}</td>
                             <td>{{ $row->created_at }}</td>
                             <td> Update | Delete </td>
                         </tr>

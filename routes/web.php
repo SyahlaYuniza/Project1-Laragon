@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChasierController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,6 +14,9 @@ Route::get('/chasier', [ChasierController::class, 'index'])->name('chasier-index
 Route::get('/chasier/create', [ChasierController::class, 'tambah'])->name('chasier-create');
 Route::post('/chasier/store', [ChasierController::class, 'simpan'])->name('chasier-store');
 
+Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier-index'); 
+Route::get('/supplier/create', [SupplierController::class, 'tambah'])->name('supplier-create');
+Route::post('/supplier/store', [SupplierController::class, 'simpan'])->name('supplier-store');
 
 //mahasiswa
 Route::get('/mahasiswa', function () {
